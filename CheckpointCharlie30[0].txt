@@ -1,0 +1,31 @@
+{$CLEO .cs}
+
+script_name 'COKETIME'
+
+0@ = 0
+
+while true
+    wait 0
+
+    if
+        $ONMISSION == 0
+    then
+        0@ = 0
+    else
+        if
+            0@ == 0
+        then
+            if or
+                $8580 == 151000
+                $8580 == 146000
+                $8580 == 141000
+                $8580 == 136000
+                $8580 == 131000
+                $8580 == 121000
+            then
+                $8580 += 30000
+                0@ = 1
+            end
+        end
+    end
+end
